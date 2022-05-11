@@ -23,6 +23,7 @@ public class PracticeFormTests {
         String email = "dankoffalexander@gmail.com";
         String phoneNumber = "89507230992";
         String subject = "Maths";
+        String currentAddress = "Lenina str. 1";
 
         open("https://demoqa.com/automation-practice-form");
         $("input#firstName").setValue(firstName);
@@ -36,7 +37,7 @@ public class PracticeFormTests {
         $(".react-datepicker__week").$(new Selectors.ByText("30")).click();
         $("input#subjectsInput").setValue(subject).pressEnter();
         $("#hobbiesWrapper").$("[for=hobbies-checkbox-1]").click();
-        $("input#uploadPicture").uploadFile()
+        $("input#uploadPicture").uploadFromClasspath("img.png");
 
         $("#submit").click();
 
