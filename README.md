@@ -1,2 +1,5 @@
-# lesson-2-practice-form-tests
+# DemoQA registration form tests
+
+Automated UI-tests to fill registration form, submit and check filled data
+
  

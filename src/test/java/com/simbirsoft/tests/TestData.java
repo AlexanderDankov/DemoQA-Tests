@@ -11,12 +11,4 @@ public class TestData {
                    randomEmail = faker.internet().emailAddress(),
                    randomPhoneNumber = faker.number().digits(10),
                    randomAddress = faker.address().fullAddress();
-
-
-//    String firstName = "Alexander";
-//    String lastName = "Dankov";
-//    String email = "dankoffalexander@gmail.com";
-//    String phoneNumber = "8950723099";
-//    String subject = "Maths";
-//    String currentAddress = "Lenina str. 1";
 }

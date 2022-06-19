@@ -2,8 +2,6 @@ package com.simbirsoft.pages.components;
 
 import com.codeborne.selenide.SelenideElement;
 
-import java.util.Locale;
-
 import static com.codeborne.selenide.Selenide.$;
 
 public class GenderCheckboxComponent {
