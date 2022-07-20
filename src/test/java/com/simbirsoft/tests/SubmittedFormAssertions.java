@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Selenide.$x;
 import static com.simbirsoft.tests.TestData.*;
 
 public class SubmittedFormAssertions {
-    private SelenideElement studentName =  $x("//td[text()='Student Name']").parent(),
+    private final SelenideElement studentName =  $x("//td[text()='Student Name']").parent(),
                             studentEmail = $x("//td[text()='Student Email']").parent(),
                             studentGender =  $x("//td[text()='Gender']").parent(),
                             studentPhone = $x("//td[text()='Mobile']").parent(),
@@ -21,11 +21,11 @@ public class SubmittedFormAssertions {
     public void checkSubmittedFormData() {
         studentName.shouldHave(text(randomFirstName + " " + randomLastName));
         studentEmail.shouldHave(text(randomEmail));
-        studentGender.shouldHave(text("Male"));
+        studentGender.shouldHave(text("Female"));
         studentPhone.shouldHave(text(randomPhoneNumber));
-        studentBirthDate.shouldHave(text("30 May,1991"));
-        studentSubject.shouldHave(text("Math"));
-        studentHobby.shouldHave(text("Sports"));
+        studentBirthDate.shouldHave(text("24 February,1992"));
+        studentSubject.shouldHave(text("Physics"));
+        studentHobby.shouldHave(text("Reading"));
         studentImage.shouldHave(text("img.png"));
         studentAddress.shouldHave(text(randomAddress));
         studentStateAndCity.shouldHave(text("Haryana Karnal"));
