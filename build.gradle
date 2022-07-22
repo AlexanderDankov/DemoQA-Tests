@@ -10,7 +10,8 @@ dependencies {
     testImplementation (
             "com.codeborne:selenide:5.20.3",
             "com.github.javafaker:javafaker:0.15",
-            "org.junit.jupiter:junit-jupiter:5.7.1")
+            "org.junit.jupiter:junit-jupiter:5.7.1",
+            "io.qameta.allure:allure-selenide:2.14.0")
     testRuntimeOnly (
             "org.slf4j:slf4j-simple:1.7.29",
             "org.junit.jupiter:junit-jupiter-engine:5.7.1")
