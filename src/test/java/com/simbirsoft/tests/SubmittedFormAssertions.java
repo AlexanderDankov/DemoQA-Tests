@@ -1,6 +1,7 @@
 package com.simbirsoft.tests;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$x;
@@ -18,6 +19,7 @@ public class SubmittedFormAssertions {
                             studentAddress = $x("//td[text()='Address']").parent(),
                             studentStateAndCity = $x("//td[text()='State and City']").parent();
 
+    @Step("Проверка введенных в форму данных")
     public void checkSubmittedFormData() {
         studentName.shouldHave(text(randomFirstName + " " + randomLastName));
         studentEmail.shouldHave(text(randomEmail));
