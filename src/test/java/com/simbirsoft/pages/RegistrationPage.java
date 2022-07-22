@@ -71,7 +71,8 @@ public class RegistrationPage {
     }
 
     public void submitForm() {
-        submitButton.click();
+        emailInput.pressEnter();
+       // submitButton.click();
         submittedForm.shouldHave(text(SUBMITTED_TITLE));
     }
 
