@@ -19,13 +19,13 @@ public class PracticeFormTests extends TestBase {
                         .setPhoneNumber(randomPhoneNumber)
                         .setCurrentAddress(randomAddress);
 
-        registrationPage.genderCheckbox.setGender("Male");
+        registrationPage.genderCheckbox.setGender("Female");
 
-        registrationPage.calendar.setDate("30","5","1991");
+        registrationPage.calendar.setDate("24","1","1992");
 
-        registrationPage.setSubject("Math");
+        registrationPage.setSubject("Physics");
 
-        registrationPage.hobbiesCheckbox.setHobby("Sports");
+        registrationPage.hobbiesCheckbox.setHobby("Reading");
 
         registrationPage.uploadImage("img.png");
 
