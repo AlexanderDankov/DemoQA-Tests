@@ -11,9 +11,12 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class TestBase {
     @BeforeAll
     static void setup() {
-        String browser = System.getProperty("browser", "chrome");
+        //String browser = System.getProperty("browser", "chrome");
         Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.startMaximized = true;
+        Configuration.browserVersion = System.getProperty("version", "100.0");
+        Configuration.browserSize = System.getProperty("size", "1366x768");
+        //Configuration.startMaximized = Boolean.parseBoolean(System.getProperty("fullscreen", "false"));
+
         Configuration.baseUrl = "https://demoqa.com";
 
         SelenideLogger.addListener("AllureListener", new AllureSelenide());
