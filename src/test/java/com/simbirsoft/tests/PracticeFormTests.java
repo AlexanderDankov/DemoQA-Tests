@@ -9,7 +9,7 @@ public class PracticeFormTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
-    @Tag("SuccessPracticeFormTest")
+    @Tag("successPracticeFormTest")
     @Test
     void practiceFormTests() {
         registrationPage.openPage();

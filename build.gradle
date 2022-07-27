@@ -40,9 +40,16 @@ tasks.withType(Test) {
     }
 }
 
-task type(type: Test) {
+task successPracticeFormTests(type: Test) {
     useJUnitPlatform {
-        includeTags "succesPracticeFormTest"
+        includeTags "successPracticeFormTest"
+        excludeTags "failedPracticeFormTest"
+    }
+}
+
+task failedPracticeFormTests(type: Test) {
+    useJUnitPlatform {
         includeTags "failedPracticeFormTest"
+        excludeTags "successPracticeFormTest"
     }
 }
