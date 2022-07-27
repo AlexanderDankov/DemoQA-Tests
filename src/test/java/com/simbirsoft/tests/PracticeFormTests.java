@@ -1,12 +1,13 @@
 package com.simbirsoft.tests;
 
 import com.simbirsoft.pages.RegistrationPage;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import static com.simbirsoft.tests.TestData.*;
 
 public class PracticeFormTests extends TestBase {
 
-
+    @Tag("SuccessPracticeFormTest")
     @Test
     void practiceFormTests() {
         RegistrationPage registrationPage = new RegistrationPage();

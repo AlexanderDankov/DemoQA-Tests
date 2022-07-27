@@ -11,6 +11,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class TestBase {
     @BeforeAll
     static void setup() {
+        String browser = System.getProperty("browser", "chrome");
+        Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.startMaximized = true;
         Configuration.baseUrl = "https://demoqa.com";
 
