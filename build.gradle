@@ -40,9 +40,9 @@ tasks.withType(Test) {
     }
 }
 
-task successPraticeFormTest(type: Test) {
-    //systemProperty("browserSize", System.getProperty("browserSize", "400x400"))
+task type(type: Test) {
     useJUnitPlatform {
         includeTags "succesPracticeFormTest"
+        includeTags "failedPracticeFormTest"
     }
 }

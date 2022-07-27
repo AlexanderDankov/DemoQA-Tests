@@ -7,11 +7,11 @@ import static com.simbirsoft.tests.TestData.*;
 
 public class PracticeFormTests extends TestBase {
 
+    RegistrationPage registrationPage = new RegistrationPage();
+
     @Tag("SuccessPracticeFormTest")
     @Test
     void practiceFormTests() {
-        RegistrationPage registrationPage = new RegistrationPage();
-
         registrationPage.openPage();
 
         registrationPage.setFirstName(randomFirstName)
@@ -31,6 +31,22 @@ public class PracticeFormTests extends TestBase {
         registrationPage.uploadImage("img.png");
 
         registrationPage.stateAndCityMenu.selectStateAndCity("Haryana", "Karnal");
+
+        registrationPage.submitForm();
+
+        registrationPage.submittedFormAssertions.checkSubmittedFormData();
+    }
+
+    @Tag("failedPracticeFormTest")
+    @Test
+    void failedPracticeFormTest() {
+        registrationPage.openPage();
+
+        registrationPage.setFirstName(randomFirstName)
+                .setLastName(randomLastName)
+                .setEmail(randomEmail)
+                .setPhoneNumber(randomPhoneNumber)
+                .setCurrentAddress(randomAddress);
 
         registrationPage.submitForm();
 
