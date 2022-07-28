@@ -10,21 +10,24 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import static java.lang.String.format;
+
 public class TestBase {
 
-    public CredentialConfig credentials = ConfigFactory.create(CredentialConfig.class);
+    public static CredentialConfig credentials = ConfigFactory.create(CredentialConfig.class);
+
     @BeforeAll
     static void setup() {
         //String browser = System.getProperty("browser", "chrome");
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("version", "100.0");
         Configuration.browserSize = System.getProperty("size", "1366x768");
-        //Configuration.startMaximized = Boolean.parseBoolean(System.getProperty("fullscreen", "false"));
-
         Configuration.baseUrl = "https://demoqa.com";
 
         SelenideLogger.addListener("AllureListener", new AllureSelenide());
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+
+        String remoteUrl = System.getProperty("remoteUrl", "selenoid.autotests.cloud");
+        Configuration.remote = format("https://%s:%s@%s/wd/hub/", credentials.login(), credentials.password(), remoteUrl);
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
