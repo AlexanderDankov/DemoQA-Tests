@@ -3,7 +3,7 @@ package com.simbirsoft.config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:config/credential.properties"
+        "classpath:config/credentials.properties"
 })
 public interface CredentialConfig extends Config {
 

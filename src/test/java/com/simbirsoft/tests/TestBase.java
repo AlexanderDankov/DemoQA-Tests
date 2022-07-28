@@ -8,8 +8,10 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import static com.codeborne.selenide.Selenide.open;
 import static java.lang.String.format;
 
 public class TestBase {
@@ -25,8 +27,8 @@ public class TestBase {
 
         SelenideLogger.addListener("AllureListener", new AllureSelenide());
 
-        //String remoteUrl = System.getProperty("remoteUrl", "selenoid.autotests.cloud");
-        Configuration.remote = String.format("https://%s:%s@%s/wd/hub/", credentials.login(), credentials.password(), System.getProperty("remoteUrl", "selenoid.autotests.cloud"));
+        String remoteUrl = System.getProperty("remoteUrl", "selenoid.autotests.cloud");
+        Configuration.remote = format("https://%s:%s@%s/wd/hub/", credentials.login(), credentials.password(), remoteUrl);
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
