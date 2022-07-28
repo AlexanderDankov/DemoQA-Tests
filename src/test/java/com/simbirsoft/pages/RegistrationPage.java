@@ -13,6 +13,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class RegistrationPage {
+
     private SelenideElement
             formTitle = $(".practice-form-wrapper"),
             firstNameInput = $("input#firstName"),
@@ -85,6 +86,4 @@ public class RegistrationPage {
        // submitButton.click();
         submittedForm.shouldHave(text(SUBMITTED_TITLE));
     }
-
-
 }

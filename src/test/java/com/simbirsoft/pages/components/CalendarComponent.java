@@ -2,7 +2,6 @@ package com.simbirsoft.pages.components;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.Selectors;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 

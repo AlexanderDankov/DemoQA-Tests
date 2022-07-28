@@ -19,12 +19,37 @@ dependencies {
             "com.codeborne:selenide:5.20.3",
             "com.github.javafaker:javafaker:0.15",
             "org.junit.jupiter:junit-jupiter:5.7.1",
+            "org.aeonbits.owner:owner:1.0.12",
             "io.qameta.allure:allure-selenide:2.18.1")
     testRuntimeOnly (
             "org.slf4j:slf4j-simple:1.7.29",
             "org.junit.jupiter:junit-jupiter-engine:5.7.1")
 }
 
-test {
+
+tasks.withType(Test) {
+    systemProperties(System.getProperties())
     useJUnitPlatform()
+
+    testLogging {
+        lifecycle {
+//            events "started", "failed"
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
+task successPracticeFormTests(type: Test) {
+    useJUnitPlatform {
+        includeTags "successPracticeFormTest"
+        excludeTags "failedPracticeFormTest"
+    }
+}
+
+task failedPracticeFormTests(type: Test) {
+    useJUnitPlatform {
+        includeTags "failedPracticeFormTest"
+        excludeTags "successPracticeFormTest"
+    }
 }
