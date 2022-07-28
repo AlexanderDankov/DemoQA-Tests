@@ -18,7 +18,6 @@ public class TestBase {
 
     @BeforeAll
     static void setup() {
-        //String browser = System.getProperty("browser", "chrome");
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("version", "100.0");
         Configuration.browserSize = System.getProperty("size", "1366x768");
@@ -26,8 +25,8 @@ public class TestBase {
 
         SelenideLogger.addListener("AllureListener", new AllureSelenide());
 
-        String remoteUrl = System.getProperty("remoteUrl", "selenoid.autotests.cloud");
-        Configuration.remote = format("https://%s:%s@%s/wd/hub/", credentials.login(), credentials.password(), remoteUrl);
+        //String remoteUrl = System.getProperty("remoteUrl", "selenoid.autotests.cloud");
+        Configuration.remote = String.format("https://%s:%s@%s/wd/hub/", credentials.login(), credentials.password(), System.getProperty("remoteUrl", "selenoid.autotests.cloud"));
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
